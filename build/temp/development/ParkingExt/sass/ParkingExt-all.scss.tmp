@@ -909,6 +909,7 @@ $include-ext-window-toast: dynamic(true);;
 $include-ext-window-window: dynamic(true);;
 $include-parkingext-application: dynamic(true);;
 $include-parkingext-store-personnel: dynamic(true);;
+$include-parkingext-store-ticket: dynamic(true);;
 $include-parkingext-view-main-list: dynamic(true);;
 $include-parkingext-view-main-main: dynamic(true);;
 $include-parkingext-view-main-maincontroller: dynamic(true);;

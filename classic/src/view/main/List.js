@@ -16,9 +16,8 @@ Ext.define('ParkingExt.view.main.List', {
     },
 
     columns: [
-        { text: 'Name',  dataIndex: 'name' },
-        { text: 'Email', dataIndex: 'email', flex: 1 },
-        { text: 'Phone', dataIndex: 'phone', flex: 1 }
+        { text: 'Id',  dataIndex: 'name', flex: 1},
+        { text: 'Is this slot occupied?', dataIndex: 'email', flex: 0.3 },
     ],
 
     listeners: {
