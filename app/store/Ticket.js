@@ -7,6 +7,6 @@ Ext.define('ParkingExt.store.Ticket', {
         type: 'ajax',
         url: 'http://localhost:54790/api/Slots/json'
     },
-    autoLoad: true
+    autoLoad: true,
 
 })

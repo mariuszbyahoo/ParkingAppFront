@@ -1,6 +1,6 @@
 Ext.define('ParkingExt.model.Slot', {
     extend: 'Ext.data.Model',
-    fields: ['isOccupied', 'desc'],
+    fields: ['id', 'isOccupied', 'desc'],
     alias: 'Slot',
     proxy:{
         type: 'rest',

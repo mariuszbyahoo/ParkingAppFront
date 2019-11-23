@@ -4,6 +4,7 @@
 Ext.define('ParkingExt.view.main.List', {
     extend: 'Ext.grid.Panel',
     xtype: 'mainlist',
+    alias: 'list',
 
     requires: [
         'ParkingExt.store.Ticket',
