@@ -6,18 +6,18 @@ Ext.define('ParkingExt.view.main.List', {
     xtype: 'mainlist',
 
     requires: [
-        'ParkingExt.store.Personnel'
+        'ParkingExt.store.Ticket'
     ],
 
-    title: 'Personnel',
+    title: 'Parking',
 
     store: {
-        type: 'personnel'
+        type: 'ticket'
     },
 
     columns: [
-        { text: 'Id',  dataIndex: 'name', flex: 1},
-        { text: 'Is this slot occupied?', dataIndex: 'email', flex: 0.3 },
+        { text: 'Id',  dataIndex: 'id', flex: 1},
+        { text: 'Is this slot occupied?', dataIndex: 'isOccupied', flex: 0.3 },
     ],
 
     listeners: {

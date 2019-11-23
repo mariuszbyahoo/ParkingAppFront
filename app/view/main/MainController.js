@@ -10,12 +10,17 @@ Ext.define('ParkingExt.view.main.MainController', {
     alias: 'controller.main',
 
     onItemSelected: function (sender, record) {
-        Ext.Msg.confirm('Confirm', 'Are you sure?', 'onConfirm', this);
+        Ext.Msg.confirm('Confirm', 'Do you want to occupy this slot?', 'onConfirm', this);
     },
 
     onConfirm: function (choice) {
         if (choice === 'yes') {
-            //
+
+            Ext.Msg.alert('Info', 'You may find your ticket in the Tickets grid', 'getTicket', this);
         }
+    },
+
+    getTicket: function() {
+        Ext.Msg.alert('Info', 'You have not implemented it!');
     }
 });
