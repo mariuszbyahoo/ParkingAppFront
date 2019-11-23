@@ -15,7 +15,7 @@ Ext.define('ParkingExt.view.main.Main', {
 
         'ParkingExt.view.main.MainController',
         'ParkingExt.view.main.MainModel',
-        'ParkingExt.view.main.List'
+        'ParkingExt.view.main.List',
     ],
 
     controller: 'main',
@@ -75,27 +75,15 @@ Ext.define('ParkingExt.view.main.Main', {
     },
 
     items: [{
-        title: 'Home',
-        iconCls: 'fa-home',
+        title: 'Parking',
+        iconCls: 'x-fa fa-eye',
         // The following grid shares a store with the classic version's grid as well!
         items: [{
             xtype: 'mainlist'
         }]
     }, {
-        title: 'Users',
-        iconCls: 'fa-user',
-        bind: {
-            html: '{loremIpsum}'
-        }
-    }, {
-        title: 'Groups',
-        iconCls: 'fa-users',
-        bind: {
-            html: '{loremIpsum}'
-        }
-    }, {
-        title: 'Settings',
-        iconCls: 'fa-cog',
+        title: 'Tickets',
+        iconCls: 'x-fa fa-qrcode',
         bind: {
             html: '{loremIpsum}'
         }
