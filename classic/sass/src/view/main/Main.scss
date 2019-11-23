@@ -59,17 +59,17 @@
 
 .x-title-icon-navigation {
     font-family: FontAwesome;
-    color: #fff;
+    color: rgb(1, 104, 44);
     font-size: 24px;
     line-height: 24px;
 }
 
 .x-tab-icon-el-navigation {
     font-family: FontAwesome;
-    color: #acacac;
+    color: #994646;
 
     .x-tab-over & {
-        color: #c4c4c4;
+        color: #dd0000;
     }
 
     .x-tab-active & {

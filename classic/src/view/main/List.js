@@ -6,7 +6,9 @@ Ext.define('ParkingExt.view.main.List', {
     xtype: 'mainlist',
 
     requires: [
-        'ParkingExt.store.Ticket'
+        'ParkingExt.store.Ticket',
+        'Ext.data.identifier.Uuid'
+
     ],
 
     title: 'Parking',
@@ -22,5 +24,26 @@ Ext.define('ParkingExt.view.main.List', {
 
     listeners: {
         select: 'onItemSelected'
-    }
+    },
+
+    buttons: [
+        {
+            text: 'Add',
+            handler: function() {
+                var slot = Ext.create('Slot');
+                slot.save();
+                Ext.Msg.alert('Result','One slot has been created');
+            }
+        },
+        {
+            text: 'Delete',
+            handler: function() {
+                Ext.Ajax.request({
+                    url: 'http://localhost:54790/api/Slots/random',
+                    method: 'DELETE'
+                });
+                Ext.Msg.alert('Result','One slot has been deleted');
+            }
+        }
+    ]
 });
