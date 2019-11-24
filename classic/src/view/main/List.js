@@ -34,6 +34,7 @@ Ext.define('ParkingExt.view.main.List', {
                 var slot = Ext.create('Slot');
                 slot.save();
                 Ext.Msg.alert('Result','One slot has been created');
+                window.location.reload();
             }
         },
         {
@@ -44,6 +45,7 @@ Ext.define('ParkingExt.view.main.List', {
                     method: 'DELETE'
                 });
                 Ext.Msg.alert('Result','One slot has been deleted');
+                window.location.reload();
             }
         }
     ]

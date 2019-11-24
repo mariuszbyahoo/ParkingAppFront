@@ -10,6 +10,10 @@ Ext.define('ParkingExt.view.main.MainController', {
 
     alias: 'controller.main',
 
+    store: {
+        type: 'ticket'
+    },
+
     onItemSelected: function (sender, record) {
         Ext.Msg.confirm('Confirm', 'Do you want to occupy this slot?', 'onConfirm', this);
         id = record.id;
@@ -30,5 +34,6 @@ Ext.define('ParkingExt.view.main.MainController', {
                     }
                 });
         Ext.Msg.alert('Result','Succesfully occupied a slot');
+        window.location.reload();
     }
 });
