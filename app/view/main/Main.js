@@ -77,8 +77,14 @@ Ext.define('ParkingAppFront.view.main.Main', {
         title: 'Home',
         iconCls: 'fa-home',
         // The following grid shares a store with the classic version's grid as well!
-        items: [{
-        }]
+    items: [
+        {
+        title: 'Set of Slots',
+        bind: {
+            html: '<h2> HERE WILL BE SLOTS</h2>'
+        }
+        }
+    ]
     }, {
         title: 'Users',
         iconCls: 'fa-user',

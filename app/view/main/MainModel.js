@@ -6,6 +6,8 @@ Ext.define('ParkingAppFront.view.main.MainModel', {
 
     alias: 'viewmodel.main',
 
+    store: Ext.create('ParkingAppFront.store.Slots'),
+
     data: {
         name: 'ParkingAppFront',
 
