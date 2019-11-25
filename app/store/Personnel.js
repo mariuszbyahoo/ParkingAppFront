@@ -1,11 +1,9 @@
-Ext.define('ParkingExt.store.Personnel', {
+Ext.define('ParkingAppFront.store.Personnel', {
     extend: 'Ext.data.Store',
 
     alias: 'store.personnel',
 
-    fields: [
-        'name', 'email', 'phone'
-    ],
+    model: 'ParkingAppFront.model.Personnel',
 
     data: { items: [
         { name: 'Jean Luc', email: "jeanluc.picard@enterprise.com", phone: "555-111-1111" },

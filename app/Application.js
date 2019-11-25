@@ -3,24 +3,16 @@
  * calls Ext.application(). This is the ideal place to handle application launch and
  * initialization details.
  */
-Ext.define('ParkingExt.Application', {
+Ext.define('ParkingAppFront.Application', {
     extend: 'Ext.app.Application',
 
-    name: 'ParkingExt',
+    name: 'ParkingAppFront',
 
     quickTips: false,
     platformConfig: {
         desktop: {
             quickTips: true
         }
-    },
-
-    stores: [
-        // TODO: add global / shared stores here
-    ],
-
-    launch: function () {
-        // TODO - Launch the application
     },
 
     onAppUpdate: function () {
