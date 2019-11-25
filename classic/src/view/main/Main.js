@@ -77,9 +77,11 @@ Ext.define('ParkingExt.view.main.Main', {
     items: [{
         title: 'Parking',
         iconCls: 'x-fa fa-eye',
+        layout :'fit',
         // The following grid shares a store with the classic version's grid as well!
         items: [{
-            xtype: 'mainlist'
+            xtype: 'mainlist',
+            reference: 'parkingsList'
         }]
     }, {
         title: 'Tickets',

@@ -30,23 +30,13 @@ Ext.define('ParkingExt.view.main.List', {
     buttons: [
         {
             text: 'Add',
-            handler: function() {
-                var slot = Ext.create('Slot');
-                slot.save();
-                Ext.Msg.alert('Result','One slot has been created');
-                window.location.reload();
-            }
+            handler: 'onSlotAddBtnTap'
+
         },
         {
             text: 'Delete',
-            handler: function() {
-                Ext.Ajax.request({
-                    url: 'http://localhost:54790/api/Slots/random',
-                    method: 'DELETE'
-                });
-                Ext.Msg.alert('Result','One slot has been deleted');
-                window.location.reload();
-            }
+            handler: 'onSlotDelBtnTap'
+
         }
     ]
 });

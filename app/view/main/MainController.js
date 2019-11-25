@@ -10,10 +10,6 @@ Ext.define('ParkingExt.view.main.MainController', {
 
     alias: 'controller.main',
 
-    store: {
-        type: 'ticket'
-    },
-
     onItemSelected: function (sender, record) {
         Ext.Msg.confirm('Confirm', 'Do you want to occupy this slot?', 'onConfirm', this);
         id = record.id;
@@ -26,14 +22,48 @@ Ext.define('ParkingExt.view.main.MainController', {
     },
 
     getTicket: function() {
+        let store = this.lookupReference('parkingsList').getStore();
         Ext.Ajax.request({
                     url: 'http://localhost:54790/api/Slots/' + id,
                     method: 'PUT',
                     body: {
 
+                    },
+                    success: function(response, opts) {
+                        store.load();
+                    },
+                    failure: function (response, opts) {
+                        Ext.Msg.alert('ERROR', 'Something has gone wrong.');
                     }
                 });
-        Ext.Msg.alert('Result','Succesfully occupied a slot');
-        window.location.reload();
+    },
+
+    onSlotAddBtnTap: function(btn){
+        let store = this.lookupReference('parkingsList').getStore(),
+            me = this;
+        
+        Ext.create('Slot').save({
+            callback: () => {
+                store.load();   
+            }
+        });
+    
+    },
+
+    onSlotDelBtnTap: function(btn) {
+        let store = this.lookupReference('parkingsList').getStore();
+        Ext.Ajax.request({
+            url: 'http://localhost:54790/api/Slots/random',
+            method: 'DELETE',
+            body: {
+
+            },
+            success: function (response, opts) {
+                store.load();
+            },
+            failure: function (response, opts) {
+                Ext.Msg.alert('Failure', 'Oh No');
+            }
+        });
     }
 });
