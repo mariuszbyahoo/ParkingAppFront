@@ -15,7 +15,6 @@ Ext.define('ParkingAppFront.view.main.Main', {
 
         'ParkingAppFront.view.main.MainController',
         'ParkingAppFront.view.main.MainModel',
-        'ParkingAppFront.view.main.List'
     ],
 
     controller: 'main',
@@ -79,7 +78,6 @@ Ext.define('ParkingAppFront.view.main.Main', {
         iconCls: 'fa-home',
         // The following grid shares a store with the classic version's grid as well!
         items: [{
-            xtype: 'mainlist'
         }]
     }, {
         title: 'Users',
