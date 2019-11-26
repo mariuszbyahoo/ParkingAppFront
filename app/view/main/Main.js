@@ -79,22 +79,23 @@ Ext.define('ParkingAppFront.view.main.Main', {
         iconCls: 'fa-home',
         items: [
             {
-                xtype: 'dataview',
+                 xtype: 'dataview',
                 
-                reference: 'slotsList',
+                 reference: 'slotsList',
                 
-                store: Ext.getStore('slots'),
+                 store: {
+                     type: 'slots'
+                 },
                 
-                tpl: new Ext.XTemplate(
-                    '<h1>Tu Mają być przyciski</h1>',
-                    '<tpl for=".">',
-                        '<div class="data-view">',
-                            '<button class="slot">P</button>',    
-                        '</div>',
-                    '</tpl>'
-                ),
-                itemSelector: 'div.data-view',
-                // Najpierw zdefiniuj templatkę DataView i potem umieścisz ją zgodnie ze str. 148 w książce.
+                 tpl: new Ext.XTemplate(
+                     '<h1>Tu Mają być przyciski</h1>',
+                     '<tpl for=".">',
+                         '<div class="data-view">',
+                             '<button class="slot">P</button>',    
+                         '</div>',
+                     '</tpl>'
+                 ),
+                 itemSelector: 'div.data-view',
             }
         ]
     }, {
@@ -117,5 +118,3 @@ Ext.define('ParkingAppFront.view.main.Main', {
         }
     }]
 });
-
-console.log('Store: ' + Ext.getStore('Slots'));

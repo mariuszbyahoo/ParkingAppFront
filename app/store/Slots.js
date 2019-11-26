@@ -1,11 +1,21 @@
-var store = Ext.create('Ext.data.Store', {
+Ext.define('ParkingAppFront.store.Slots' , {
+    extend: 'Ext.data.Store', 
+
+    alias: 'store.slots',
+
     model: 'ParkingAppFront.model.Slot',
 
-    id: 'slots',
-    alias: 'store.slots',
+    storeId: 'slots',
+
     proxy: {
         type: 'ajax',
         url: 'http://localhost:54790/api/Slots/json',
-        autoLoad: true,
-    }
+        reader: {
+            type: 'json',
+            rootproperty: 'items'
+        }
+    },
+    autoLoad: true,
+    autoSync: true
 });
+

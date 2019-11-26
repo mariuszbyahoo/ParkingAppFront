@@ -4,6 +4,10 @@
 Ext.define('ParkingAppFront.view.main.MainModel', {
     extend: 'Ext.app.ViewModel',
 
+    requires: [
+        'ParkingAppFront.store.Slots'
+    ],
+
     alias: 'viewmodel.main',
 
     store: {
@@ -17,3 +21,4 @@ Ext.define('ParkingAppFront.view.main.MainModel', {
     }
     //TODO - add data, formulas and/or methods to support your view
 });
+
