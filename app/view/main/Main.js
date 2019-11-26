@@ -20,108 +20,49 @@ Ext.define('ParkingAppFront.view.main.Main', {
 
     controller: 'main',
     viewModel: 'main',
-
-    ui: 'navigation',
-
-    tabBarHeaderPosition: 1,
-    titleRotation: 0,
-    tabRotation: 0,
-
-    header: {
-        layout: {
-            align: 'stretchmax'
-        },
-        title: {
-            bind: {
-                text: '{name}'
-            },
-            flex: 0
-        },
-        iconCls: 'fa-th-list'
-    },
-
-    tabBar: {
-        flex: 1,
-        layout: {
-            align: 'stretch',
-            overflowHandler: 'none'
-        }
-    },
-
-    responsiveConfig: {
-        tall: {
-            headerPosition: 'top'
-        },
-        wide: {
-            headerPosition: 'left'
-        }
-    },
-
-    defaults: {
-        bodyPadding: 20,
-        tabConfig: {
-            responsiveConfig: {
-                wide: {
-                    iconAlign: 'left',
-                    textAlign: 'left'
-                },
-                tall: {
-                    iconAlign: 'top',
-                    textAlign: 'center',
-                    width: 120
-                }
-            }
-        }
-    },
+    layout: 'fit',
 
     items: [{
-        title: 'Home',
-        iconCls: 'fa-home',
+        title: 'Parking',
+        iconCls: 'fas fa-parking',
+        autoScroll: true,
+        maxWidth: 1600,
         items: [
             {
                 xtype: 'dataview',
-                
+                height: 500,
                 reference: 'slotsList',
                 
                 store: {
-                     type: 'slots'
+                      type: 'slots'
                 },
-                
+
                 tpl: new Ext.XTemplate(
-                     '<h1>Parking: </h1>',
-                     '<tpl for=".">',
+                    '<h1>Parking: </h1>',
+                    '<tpl for=".">',
                         '<tpl if="isOccupied == true">',
                             '<button class="occupied" id="{id}">P</button>',
                         '<tpl else>',
                             '<button class="free" id="{id}">P</button>',
-                     '</tpl>',
+                    '</tpl>',
                     '</tpl>'
                 ),
                 itemSelector: 'button',
 
                 listeners: {
-                     itemclick: 'onItemSelected'
+                    itemclick: 'onItemSelected'
                 }
-            }
-            
+            }            
         ]
-    }, {
-        title: 'Users',
-        iconCls: 'fa-user',
-        bind: {
-            html: '{loremIpsum}'
+    }],
+    buttons: [
+        {
+            text: '<i class="fas fa-plus"></i>',
+            handler: 'addClick'
+        },
+        {
+            text: '<i class="fas fa-minus"></i>',
+            handler: 'removeClick'
         }
-    }, {
-        title: 'Groups',
-        iconCls: 'fa-users',
-        bind: {
-            html: '{loremIpsum}'
-        }
-    }, {
-        title: 'Settings',
-        iconCls: 'fa-cog',
-        bind: {
-            html: '{loremIpsum}'
-        }
-    }]
+    ]
 });

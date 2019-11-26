@@ -20,6 +20,34 @@ Ext.define('ParkingAppFront.view.main.MainController', {
                 callback: function() {
                     store.load();
                 }
-            })
-        }
+            });
+    },
+
+    addClick: function () {
+        let store = Ext.data.StoreManager.lookup('slots');
+        Ext.Ajax.request({
+            url: 'http://localhost:54790/api/Slots',
+            method: 'POST',
+            body: {
+
+            },
+            callback: function () {
+                store.load();
+            }
+        });
+    },
+
+    removeClick: function () {
+        let store = Ext.data.StoreManager.lookup('slots');
+        Ext.Ajax.request({
+            url: 'http://localhost:54790/api/Slots/random',
+            method: 'DELETE',
+            body: {
+
+            },
+            callback: function() {
+                store.load();
+            }
+        })
+    }
 });
