@@ -90,8 +90,12 @@ Ext.define('ParkingAppFront.view.main.Main', {
                 tpl: new Ext.XTemplate(
                      '<h1>Parking: </h1>',
                      '<tpl for=".">',
-                        '<button class="slot" id="{id}">{isOccupied}</button>',    
-                     '</tpl>'
+                        '<tpl if="isOccupied == true">',
+                            '<button class="occupied" id="{id}">P</button>',
+                        '<tpl else>',
+                            '<button class="free" id="{id}">P</button>',
+                     '</tpl>',
+                    '</tpl>'
                 ),
                 itemSelector: 'button',
 

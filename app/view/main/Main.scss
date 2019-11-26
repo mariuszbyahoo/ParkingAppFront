@@ -86,9 +86,18 @@
     right: -24px;
 }
 
-.slot {
+.occupied {
     height: 150px;
     width: 150px;
     margin: 10px;
     border: none;
+    background-color:#800000;
+}
+
+.free {
+    height: 150px;
+    width: 150px;
+    margin: 10px;
+    border: none;
+    background-color:#009900;
 }
