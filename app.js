@@ -15,4 +15,6 @@ Ext.application({
 
     // The name of the initial view to create.
     mainView: 'ParkingAppFront.view.main.Main',
+
+
 });

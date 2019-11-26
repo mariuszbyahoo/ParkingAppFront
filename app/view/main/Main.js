@@ -5,6 +5,7 @@
  *
  * TODO - Replace this content of this view to suite the needs of your application.
  */
+
 Ext.define('ParkingAppFront.view.main.Main', {
     extend: 'Ext.tab.Panel',
     xtype: 'app-main',
@@ -76,15 +77,26 @@ Ext.define('ParkingAppFront.view.main.Main', {
     items: [{
         title: 'Home',
         iconCls: 'fa-home',
-        // The following grid shares a store with the classic version's grid as well!
-    items: [
-        {
-        title: 'Set of Slots',
-        bind: {
-            html: '<h2> HERE WILL BE SLOTS</h2>'
-        }
-        }
-    ]
+        items: [
+            {
+                xtype: 'dataview',
+                
+                reference: 'slotsList',
+                
+                store: Ext.getStore('slots'),
+                
+                tpl: new Ext.XTemplate(
+                    '<h1>Tu Mają być przyciski</h1>',
+                    '<tpl for=".">',
+                        '<div class="data-view">',
+                            '<button class="slot">P</button>',    
+                        '</div>',
+                    '</tpl>'
+                ),
+                itemSelector: 'div.data-view',
+                // Najpierw zdefiniuj templatkę DataView i potem umieścisz ją zgodnie ze str. 148 w książce.
+            }
+        ]
     }, {
         title: 'Users',
         iconCls: 'fa-user',
@@ -105,3 +117,5 @@ Ext.define('ParkingAppFront.view.main.Main', {
         }
     }]
 });
+
+console.log('Store: ' + Ext.getStore('Slots'));
