@@ -7,6 +7,8 @@ Ext.define('ParkingAppFront.store.Slots' , {
 
     storeId: 'slots',
 
+    reference: 'slots',
+
     proxy: {
         type: 'ajax',
         url: 'http://localhost:54790/api/Slots/json',

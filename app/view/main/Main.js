@@ -79,24 +79,27 @@ Ext.define('ParkingAppFront.view.main.Main', {
         iconCls: 'fa-home',
         items: [
             {
-                 xtype: 'dataview',
+                xtype: 'dataview',
                 
-                 reference: 'slotsList',
+                reference: 'slotsList',
                 
-                 store: {
+                store: {
                      type: 'slots'
-                 },
+                },
                 
-                 tpl: new Ext.XTemplate(
-                     '<h1>Tu Mają być przyciski</h1>',
+                tpl: new Ext.XTemplate(
+                     '<h1>Parking: </h1>',
                      '<tpl for=".">',
-                         '<div class="data-view">',
-                             '<button class="slot">P</button>',    
-                         '</div>',
+                        '<button class="slot" id="{id}">{isOccupied}</button>',    
                      '</tpl>'
-                 ),
-                 itemSelector: 'div.data-view',
+                ),
+                itemSelector: 'button',
+
+                listeners: {
+                     itemclick: 'onItemSelected'
+                }
             }
+            
         ]
     }, {
         title: 'Users',
